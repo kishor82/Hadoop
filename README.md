@@ -1,4 +1,4 @@
-# Mapreduce_example(wordcount)
+# 1.Mapreduce_example(wordcount)
 
 Hadoop Tutorial to understand the implementation of the standard wordcount example and learn how to run a simple wordcount program using mapreduce.
 
@@ -37,6 +37,43 @@ In the reduce phase, all the keys are grouped together and the values for simila
 * https://blueyes:8042 -(web UI of HDFS Namenode web interface)
 
 * https://blueyes:50075 -(web UI of Datanode tasktracker(Nodemanager))
+
+
+
+# 2.Test and Benchmark
+
+![benchmarking](https://www.michael-noll.com/assets/uploads/hadoop-benchmarking-terasort-data-flow1-505x600.png)
+
+1. TeraGen is a MapReduce program to generate the data.
+
+2. TeraSort samples the input data and uses MapReduce to sort the data into a total
+order.
+
+3. TeraValidate is a MapReduce program that validates the output is sorted.
+ 
+* To test the cluster's Processig capability we can run terasort.
+Tipically we test our cluster on a terabyte or more data but since we didn't provision that much storage we do less.
+
+### TeraGen
+
+* TeraGen generates output data that is byte-for-byte equivalent to the C version, includ-
+ing the newlines and specific keys. It divides the desired number of rows by the desired
+number of tasks and assigns ranges of rows to each map. The map jumps the random
+number generator to the correct value for the first row and generates the following rows.
+For the final run, I configured TeraGen to use 1,800 tasks to generate a total of 10 billion
+rows in HDFS, with a block size of 512 MB.
+
+### TeraSort 
+
+![TeraSort](http://blog.syncsort.com/wp-content/uploads/2013/05/Terasort-Benchmark-1.png)
+
+* TeraSort is a standard MapReduce sort, except for a custom partitioner that uses a
+sorted list of N−1 sampled keys that define the key range for each reduce. In particular,
+all keys such that sample[i−1] <= key < sample[i] are sent to reduce i. This guarantees
+that the output of reduce i are all less than the output of reduce i+1. To speed up the
+partitioning, the partitioner builds a two-level trie that quickly indexes into the list of
+sample keys based on the first two bytes of the key. TeraSort generates the sample keys
+by sampling the input before the job is submitted and writing the list of keys into HDFS.
 
 
 
