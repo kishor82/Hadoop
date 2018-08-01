@@ -2,7 +2,7 @@
 
 #create home folder for any data
 
-hadoop fs -mkdir /data
+hadoop fs -mkdir /data/random-data
 
 #Create random data for terasort
 
