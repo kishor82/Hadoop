@@ -175,6 +175,23 @@ To enter Safemode, use command:
 To come out of Safemode, use command:
 * `hdfs dfsadmin -safemode enter leave` OR `hadoop dfsadmin -safemode leave`
 
+### What is rack awareness in Hadoop HDFS? What is the need of Rack awareness?
+
+Rack- It the collection of machines around 40-50. All these machines are connected using the same network switch and if that network goes down then all machines in that rack will be out of service. Thus we say rack is down.
+
+Rack Awareness was introduced by Apache Hadoop to overcome this issue. In Rack Awareness, NameNode chooses the DataNode which is closer to the same rack or nearby rack. NameNode maintains Rack ids of each DataNode to achieve rack information. Thus, this concept chooses Datanodes based on the rack information. NameNode in hadoop makes ensures that all the replicas should not stored on the same rack or single rack. Rack Awareness Algorithm reduces latency as well as Fault Tolerance.
+
+Default replication factor is 3. Therefore according to Rack Awareness Algorithm:
+
+* The first replica of the block will store on a local rack.
+* The next replica will store on another datanode within the same rack.
+* The third replica stored on the different rack.
+* In Hadoop, we need Rack Awareness for below reason: It improves
+
+* Data high availability and reliability.
+* The performance of the cluster.
+* Network bandwidth.
+
 
 
 
