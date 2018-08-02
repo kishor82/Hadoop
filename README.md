@@ -130,7 +130,7 @@ This hadoop basic command works like -get, but deletes the HDFS copy on success.
 ### copyFromLocal
 
 This hadoop shell command is similar to put command, but the source is restricted to a local file reference.
-* `hadoop fs -copyFromLocal  /home/hduser/war_and_peace.txt hdfs://localhost:9000/data/small/war_and_peace.txt`
+* `hadoop fs -copyFromLocal  /home/hduser/war_and_peace.txt hdfs://localhost:9000/data/small/war_and_peace.txt` OR
 * `hdfs dfs -copyFromLocal  /home/hduser/war_and_peace.txt hdfs://localhost:9000/data/small/war_and_peace.txt`
 
 ### copyToLocal
