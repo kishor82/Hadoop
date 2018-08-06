@@ -35,8 +35,8 @@ share\hadoop\common
 share\hadoop\common\lib   
 share\hadoop\mapreduce    
 share\hadoop\mapreduce\lib
+
 share\hadoop\yarn
-       
 share\hadoop\yarn\lib   
 
 
