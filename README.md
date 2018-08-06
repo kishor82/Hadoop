@@ -237,6 +237,7 @@ Download a stable release from http://pig.apache.org/releases.html and un-pack t
 Move to /usr/local
 
 `mv /home/user/pig-x.y.z.tar.gz /usr/local/pig`
+
 It’s convenient to add Pig’s binary directory to your command-line path. For example:
 
 `export PIG_HOME=/usr/local/pig`
