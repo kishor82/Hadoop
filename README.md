@@ -31,13 +31,12 @@ In the reduce phase, all the keys are grouped together and the values for simila
 
 ### Include JARs in folders listed below to Run Mapreduce Program
 
-share\hadoop\common       
-share\hadoop\common\lib   
-share\hadoop\mapreduce    
-share\hadoop\mapreduce\lib
-
-share\hadoop\yarn
-share\hadoop\yarn\lib   
+* share\hadoop\common       
+* share\hadoop\common\lib   
+* share\hadoop\mapreduce    
+* share\hadoop\mapreduce\lib
+* share\hadoop\yarn
+* share\hadoop\yarn\lib   
 
 
 ### Web interfaces:
