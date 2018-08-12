@@ -1,5 +1,5 @@
 
-#What is HBase
+# What is HBase
 
 Hbase is an open source and sorted map data built on Hadoop. It is column oriented and horizontally scalable.
 
@@ -7,7 +7,7 @@ It is based on Google's Big Table.It has set of tables which keep data in key va
 
 ![hbase](https://www.javatpoint.com/hadooppages/images/rdbms_vs_hbase.PNG)
 
-##Why HBase
+## Why HBase
 
 RDBMS get exponentially slow as the data becomes large
 Expects data to be highly structured, i.e. ability to fit in a well-defined schema
